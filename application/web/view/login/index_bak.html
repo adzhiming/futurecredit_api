@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>未莱信贷登录</title>
+    <link rel="stylesheet" href="__ASSETS__user/css/base.css">
+    <style>
+        .all{
+            background:url("__ASSETS__user/images/bg_dl.png") 0 0.1rem;
+
+            background-repeat:no-repeat;
+            /*background-position: center;*/
+            background-size: cover;
+            height: 100vh;
+            margin: 0px;
+            padding: 0px;
+            background-color: #4f7dfd;
+        }
+        .sqzh .my-nav{
+            border: none;
+            width:100%;
+            background-color: #4f7dfd;
+            height:1rem;
+            font-size:0.3rem;
+            line-height:1rem;
+            color: #ffffff;
+            text-align: center;
+            padding-top:1px;
+        }
+        .sqzh .my-nav .ox{
+            width:20%;
+            line-height:0.4rem;
+            border-right: 1px solid #ffffff;
+            font-size:0.5rem;
+            margin-top:0.3rem;
+            height:0.4rem;
+            float: left;
+        }
+        .sqzh .my-nav .zx{
+            width:70%;
+            float: left;
+        }
+        .sqzh .my-nav .zx p{
+            margin-right:0.6rem;
+        }
+
+        /*未莱信贷*/
+        .logo{
+            width:100%;
+            height:4rem;
+            position: relative;
+        }
+        .logo div{
+            position: absolute;
+            width:2rem;
+            height:2rem;
+            background-color: #4f7dfd;
+            left:50%;
+            top:50%;
+            margin-left:-1.1rem;
+            margin-top:-1.1rem;
+            font-size:0.7rem;
+            color: #ffffff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 10px;
+        }
+
+        /*form提交表单*/
+        form{
+            width:100%;
+            text-align: center;
+            padding-top:1px;
+        }
+        form input{
+            font-size:0.3rem;
+            box-sizing: border-box;
+            outline: none;
+            border: none;
+        }
+        form #telphone{
+            padding-left:40px;
+            width:80%;
+            height:0.8rem;
+            margin-top:0.4rem;
+            border-bottom: 1px solid #cccccc;
+            font-size:0.26rem;
+
+        }
+        form div .input input:nth-of-type(1){
+            width:66.6%;
+            height:0.8rem;
+            padding-left:40px;
+            font-size:0.26rem;
+
+        }
+        form div .input input:nth-of-type(2){
+            width:33.3%;
+            text-align: center;
+            height:0.6rem;
+            background-color: #4f7dfd;
+            color: #FFFFFF;
+            font-size:0.2rem;
+            border: none;
+            border-radius: 0.05rem
+
+
+        }
+        form p{
+            font-size:0.26rem;
+            margin-top:0.3rem;
+        }
+        .ljsq{
+            position: relative;
+            top:0.4rem;
+            width:80%;
+            height:0.6rem;
+            text-align: center;
+            margin-left:10%;
+            background-color: #4f7dfd;
+            line-height:0.6rem;
+            color: #ffffff;
+            border-radius: 0.05rem
+        }
+
+        .ipt1{
+            background:url("__ASSETS__user/images/sj.png")no-repeat 10px center;
+            background-size: 20px 25px;
+        }
+        .ipt2{
+            background:url("__ASSETS__user/images/mim.png")no-repeat 10px center;
+            background-size: 20px 25px;
+        }
+        .box{
+            position: absolute;
+            width:80%;
+            height:4rem;
+            background-color: #FFFFFF;
+            left:50%;
+            top:53%;
+            margin-left:-40%;
+            margin-top:-1.5rem;
+        }
+        .input{
+            margin:0.3rem auto;
+            width:80%;
+            height:0.8rem;
+            border-bottom: 1px solid #cccccc;
+        }
+        .input input{
+            float: left;
+
+
+        }
+        #code{
+            margin-left:0.4rem;
+            margin-top:-0.1rem;
+            font-size:0.24rem;
+        }
+
+        input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
+    </style>
+</head>
+<body>
+
+<div class="all">
+    <div class="sqzh">
+        <!--导航-->
+        <!--<div class="my-nav">-->
+            <!--<div class="ox">&times;</div>-->
+            <!--<div class="zx">-->
+                <!--<p>个人中心</p>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--未莱信贷-->
+        <!--<div class="logo">-->
+        <!--<div>-->
+        <!--未莱信贷-->
+        <!--</div>-->
+        <!--</div>-->
+
+        <!--form表单-->
+        <div class="box">
+            <form action="" name="form1" id="mesg">
+                <div>
+                    <input type="text" name="name" placeholder="手机号码" class="ipt1" id="telphone"  onkeyup="this.value=this.value.replace(/\D/g,'')">
+                    <div class="input">
+                        <input type="text" name="yzm" placeholder="验证码" class="ipt2"  onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')"  id="yzm">
+                        <input type="button" name="iphone" value="获取验证码" onclick="sendCode(this)">
+                    </div>
+
+
+                </div>
+                <!--验证码已发送带手机137****8585-->
+                <p id="code"></p>
+            </form>
+            <!--立即申请-->
+            <!--<a href="content.html">-->
+            <div class="ljsq" onclick="sq()">立即申请</div>
+
+        </div>
+
+
+        <!--</a>-->
+
+
+    </div>
+
+</div>
+</body>
+<script>
+    var api_url = "{$api_url}"
+    var web_url = "{$web_url}"
+</script>
+<script src="__ASSETS__user/js/base.js"></script>
+<script type="text/javascript" src="__ASSETS__user/js/jquery.js"></script>
+<script type="text/javascript">
+        var clock = '';
+        var nums = 60;
+        var btn;
+       function sendCode(thisBtn){
+           var iphoneVal = $('input[name="name"]').val();
+            btn = thisBtn;
+            btn.disabled = true; //将按钮置为不可点击
+            btn.value = nums+' s后重发';
+            clock = setInterval(doLoop, 1000); //一秒执行一次
+
+           $("#code").html("验证码已经发送到手机"+$('input[name="name"]').val().substring(0,3)+"****"+$('input[name="name"]').val().substring(7,11));
+            //    验证码倒计时
+            function doLoop()
+            {
+                nums--;
+                if(nums > 0){
+                    btn.value = nums+' s后重发';
+                }else{
+                    clearInterval(clock); //清除js定时器
+                    btn.disabled = false;
+                    btn.value = '获取验证码';
+                    nums = 60; //重置时间
+                }
+            }
+
+
+            // $http.post('http://192.168.1.154/index.php/api/user/crode',{phone:iphoneVal}).then(function(res){
+            //     console.log(res)
+            // },function(){
+            // });
+            
+      $.ajax({
+            url:api_url+"user/crode",
+            type:'POST',
+            data:{
+                phone:iphoneVal
+            },
+          success: function(data){
+              if(data.code == 2001){
+                  $('input[name="name"]').val("")
+                  alert("短信发送失败");
+                  clearInterval(clock); //清除js定时器
+                  btn.disabled = false;
+                  btn.value = '获取验证码';
+                  nums = 60; //重置时间
+              }else if(data.code == 2002){
+                  $('input[name="name"]').val("")
+                  alert("手机号码不能为空");
+                  clearInterval(clock); //清除js定时器
+                  btn.disabled = false;
+                  btn.value = '获取验证码';
+                  nums = 60; //重置时间
+              }else if(data.code == 2003){
+                  $('input[name="name"]').val("")
+                  alert("手机号码格式错误");
+                  clearInterval(clock); //清除js定时器
+                  btn.disabled = false;
+                  btn.value = '获取验证码';
+                  nums = 60; //重置时间
+              }
+
+
+          },
+          error:function () {
+              console.log("shibai");
+          }
+        });
+        };
+
+
+        //获取参数
+        function GetQueryString(name) {
+            var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+            var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+            var context = "";
+            if (r != null)
+                context = r[2];
+            reg = null;
+            r = null;
+            return context == null || context == "" || context == "undefined" ? "" : context;
+        }
+
+        var id = GetQueryString("id");
+        var codes = GetQueryString("code");
+        var type =  GetQueryString("type")
+
+        //        立即申请
+        function sq() {
+            var iphoneVal = $('input[name="name"]').val();
+            console.log(iphoneVal);
+
+            var yzmVal = $('input[name="yzm"]').val();
+            console.log(yzmVal);
+
+            $.ajax({
+                type: 'POST',
+                url: api_url+"user/check_login",
+                data:{
+                    phone:iphoneVal,
+                    code:yzmVal,
+                    id:id,
+                    codes:codes,
+                    tyep:type
+                },
+                headers: {
+                    "Access-Control-Allow-Origin":"http://example.edu",
+                    "Access-Control-Allow-Headers":"X-Requested-With"
+                },
+                success: function(data) {
+                    console.log(data);
+                    if(data.code == 2005){
+                        if(data.data==1){
+                            window.location.href=web_url+"user/homepage.html";//正确登录后页面跳转
+                        }else if(data.data==2){
+                            window.location.href=web_url+"user/homepage#/daikuan";//正确登录后页面跳转
+                        }else{
+                            window.location.href=web_url+"user/homepage.html";//正确登录后页面跳转
+                        }
+                    }else if(data.code==2006){
+                        alert("验证码不一致");
+                    }
+                },
+                error: function(data, status) {
+                    console.log(status)
+                }
+            });
+        }
+
+
+
+
+
+
+
+</script>
+</html>

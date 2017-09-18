@@ -1,0 +1,110 @@
+<div id="header" class="text-center">
+   <a class="back" ng-click="loginout()">×</a>
+   首页
+</div>
+<div class="header-gao"></div>
+<!--个人信息-->
+<div class="header">
+    <div class="top clearfix">
+        <div class="left">
+            <div class="header-img">
+                <img src="__ASSETS__/agent/img/tx.png" alt="">
+            </div>
+            <div class="header-p">
+                <p ng-bind="subIndexInfo.name"></p>
+                <p >{{subIndexInfo.lev}}代理</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="__ASSETS__/agent/img/erwm.png" ui-sref="sharePage">
+        </div>
+
+    </div>
+    <div class="buttom clearfix">
+        <ul>
+            <li>
+                <p ng-bind="subIndexInfo.pending_money"></p>
+                <p>未审核金额</p>
+            </li>
+            <li>
+                <p ng-bind="subIndexInfo.left_money"></p>
+                <p>可提现金额</p>
+            </li>
+            <li>
+                <p ng-bind="subIndexInfo.freeze_money"></p>
+                <p>冻结金额</p>
+            </li>
+            <li>
+                <p ng-bind="subIndexInfo.withdraw"></p>
+                <p>已提现金额</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="index-nav">
+    <div class="op">
+        <span><img src="__ASSETS__/agent/img/A_sj_icon.png" alt=""></span>数据中心
+    </div>
+    <div class="oul">
+        <ul>
+            <li>
+                <a ui-sref="withdraw">
+                    <img src="__ASSETS__/agent/img/Asy_icon.png" alt="">
+                    <p>提现</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="report">
+                    <img src="__ASSETS__/agent/img/Bsy_icon.png" alt="">
+                    <p>报表</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="myuser.yonghu">
+                    <img src="__ASSETS__/agent/img/Csy_icon.png" alt="">
+                    <p>我的用户</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="collectionAccount">
+                    <img src="__ASSETS__/agent/img/Dsy_icon.png" alt="">
+                    <p>收款用户</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div class="index-nav">
+    <div class="op">
+        <span><img src="__ASSETS__/agent/img/B_sj_icon.png" alt=""></span>代理商管理
+    </div>
+    <div class="oul">
+        <ul>
+            <li>
+                <a ui-sref="daili.myAgent">
+                    <img src="__ASSETS__/agent/img/Esy_icon.png" alt="">
+                    <p>我的代理</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="daili.agentAdd">
+                    <img src="__ASSETS__/agent/img/Fsy_icon.png" alt="">
+                    <p>新增代理</p>
+                </a>
+            </li>
+            <li>
+                <a ui-sref="daili.quotedPrice({nav:'xy'})">
+                    <img src="__ASSETS__/agent/img/Gy_icon.png" alt="">
+                    <p>报价单</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>

@@ -1,0 +1,27 @@
+<div id="header" class="text-center">
+   <a class="back" href="javascript:history.back()">×</a>
+   分享链接
+</div>
+<div class="header-gao"></div>
+
+<div class="fenxian">
+    <div class="erwm">
+       <p class="op"> <span></span>  信用卡分享链接  <span></span> </p>
+       <div id="cardurl"></div>
+        <!-- <img src="__ASSETS__/agent/img/erlj.png" alt=""> -->
+        <p class="op2 "  data-clipboard-text="{{card.cardurl}}" >复制链接</p>
+        
+    </div>
+    <div class="erwm">
+        <p class="op"> <span></span>  贷款分享链接  <span></span> </p>
+       <div id="loanurl"></div>
+        <!-- <img src="__ASSETS__/agent/img/erlj.png" alt=""> -->
+        <p class="op2"  data-clipboard-text="{{card.loanurl}}">复制链接</p>
+        
+    </div>
+</div>
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>
+<script type="text/javascript" src="__ASSETS__/agent/js/qrcode.min.js"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/clipboard.min.js"></script>

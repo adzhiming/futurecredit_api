@@ -1,0 +1,46 @@
+<div id="header" class="text-center">
+   <a class="back" href="javascript:history.back()">×</a>
+   报表
+</div>
+<div class="header-gao"></div>
+<div class="baobiao-header">
+    <span class="pull-left font30">统计时段:</span>
+    <span class="pull-right font30" riqi>
+        <img src="__ASSETS__/agent/img/riqi.png" class="date">
+        日期
+        <img src="__ASSETS__/agent/img/bottom.png" class="jt">
+    </span>
+</div>
+<div class="dateBox">
+    <div class="clearfix date-row">
+        <div id="stime" stime class="start-time"></div>
+        <div id="etime" etime class="start-time"></div>
+    </div>
+    <div ng-click="search()" class="search-btn">查询</div>
+</div>
+
+<div class="baobiao-title">
+    <ul>
+        <li>日期</li>
+        <li>用户</li>
+        <li>操作</li>
+        <li>佣金（元）</li>
+    </ul>
+</div>
+
+<div class="baobiao-list">
+    <p ng-hide="tip.isHide" class="text-center padding10">{{tip.text}}</p>
+    <ul class="oul1">
+        <li ng-repeat="key in baobiaolist">
+            <ul class="oul2">
+                <li ng-bind="key.time"></li>
+                <li ng-bind="key.user_name"></li>
+                <li ng-bind="key.typename"></li>
+                <li ng-bind="key.commission | currency:'￥' "></li>
+            </ul>
+        </li>
+    </ul>
+    <div paginations conf="pageset" ></div>
+</div>
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'"></ng-include>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>信用卡分享</title>
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0" />
+    </head>
+<style>
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow:hidden;
+}
+body{width:100%;height:100%;overflow:hidden;background:url('__ASSETS__/agent/img/bj_xy.png') no-repeat;background-size:100% 100%;}
+
+.btn-img{
+    width:50%;
+    position:absolute;
+    left:50%;
+    margin-left:-25%;
+    bottom:12%;
+}
+
+</style>
+    <body>
+        <img src="__ASSETS__/agent/img/ann.png" class="btn-img" onclick="tiao()"/>
+    </body>
+    <script type="text/javascript" src="__ASSETS__/agent/js/jquery.js"></script>
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script type="text/javascript">
+    var url = window.location.href;
+    var rout = "{$api_url}agent/";
+    var routUser = "{$api_url}user/";
+
+    function tiao(){
+        if (url.indexOf("id/") != -1) {
+            var did = url.slice(url.indexOf('id/')+3);
+            $.post(rout + 'getAgentShareUrl', {
+                id : did
+            }, function(res) {
+                window.location.href = res.data.cardurl;
+            })
+        }
+    }
+
+
+    </script>
+    
+    <script>
+    wx.config({
+        debug: false,
+        appId: "{$signPackage['appId']}",
+        timestamp: "{$signPackage['timestamp']}",
+        nonceStr: "{$signPackage['nonceStr']}",
+        signature: "{$signPackage['signature']}",
+        jsApiList: [
+            // 所有要调用的 API 都要加到这个列表中
+            'checkJsApi',
+            'openLocation',
+            'getLocation',
+            'onMenuShareTimeline',
+            'onMenuShareAppMessage'
+          ]
+    });
+    
+    wx.ready(function () {
+    	wx.checkJsApi({
+            jsApiList: [
+                'getLocation',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage'
+            ],
+            success: function (res) {
+              //  alert(JSON.stringify(res));
+            }
+        });
+    	
+    	wx.onMenuShareAppMessage({
+            title: '聚合共享',
+            link: '{$url}',
+            desc: '轻松办卡，要选对平台！',
+            imgUrl: 'http://api.futurecredit.net/assets/agent/img/bj_xy.png',
+            trigger: function (res) {
+              // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+              // alert('用户点击发送给朋友');
+            },
+            success: function (res) {
+              // alert('已分享');
+            },
+            cancel: function (res) {
+              // alert('已取消');
+            },
+            fail: function (res) {
+              // alert(JSON.stringify(res));
+            }
+          });
+
+          wx.onMenuShareTimeline({
+            title: '聚合共享',
+            link: '{$url}',
+            imgUrl: 'http://api.futurecredit.net/assets/agent/img/bj_xy.png',
+            trigger: function (res) {
+              // 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+              // alert('用户点击分享到朋友圈');
+            },
+            success: function (res) {
+              // alert('已分享');
+            },
+            cancel: function (res) {
+              // alert('已取消');
+            },
+            fail: function (res) {
+              // alert(JSON.stringify(res));
+            }
+          });
+          
+    });
+</script>
+</html>

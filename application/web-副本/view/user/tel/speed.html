@@ -1,0 +1,20 @@
+
+
+
+<div style="display: block" class="cont1" ng-controller="loanController">
+    <ul id="ul1">
+        <li ng-repeat="money in daoz">
+            <a href="" ui-sref="loanLogin({loanid:money.id})">
+                <div class="left">
+                    <img ng-src="http://{{money.logo}}" alt="">
+                </div>
+                <div class="right">
+                    <p ng-bind="money.name"></p>
+                    <p ng-bind="money.comment"></p>
+                </div>
+            </a>
+
+        </li>
+    </ul>
+    <div style="width: 100%;height: 5rem;"></div>
+</div>

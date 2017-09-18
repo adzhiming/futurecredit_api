@@ -1,0 +1,31 @@
+<style>
+    .tab{
+        width:100%;
+        height:0.8rem;
+    }
+
+    .tab ul{
+        overflow: hidden;
+    }
+    .tab ul li{
+        width:25%;
+        height:100%;
+        text-align: center;
+        float: left;
+        line-height:0.8rem;
+        background-color: #fff;
+        font-size:0.28rem;
+    }
+</style>
+
+<div class="tab" ng-controller="myLoanController">
+    <ul class="tab1">
+        <li><a href="" ui-sref="myLoan.creditCard">信用卡</a></li>
+        <li><a href="" ui-sref="myLoan.money">贷款</a></li>
+        <li><a href="" ui-sref="myLoan.apply">申请中</a></li>
+        <li><a href="" ui-sref="myLoan.veto">否决</a></li>
+    </ul>
+</div>
+
+<div ui-view></div>
+<script src="__ASSETS__user/js/tab.js"></script>

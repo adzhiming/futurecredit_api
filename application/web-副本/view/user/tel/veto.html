@@ -1,0 +1,90 @@
+<style>
+    .cont4{
+        width:100%;
+        height:1.6rem;
+        background-color: #fff;
+        margin-top:0.1rem;
+    }
+     .cont4 .content{
+        margin-top:0.1rem;
+        width:100%;
+        height:2.6rem;
+        background-color: #fff;
+    }
+     .cont4 .left{
+        width:20%;
+        height:100%;
+        float: left;
+    }
+    .cont4 .left .cont-img{
+        height:100%;
+        width:100%;
+        float: left;
+    }
+    .cont4 .left .cont-img img{
+        width:70%;
+        margin-top:0.6rem;
+        margin-left:0.1rem;
+    }
+    .cont4 .right .cont-p{
+        width:100%;
+        height:100%;
+        float: left;
+    }
+    .cont4 .right .cont-p .top {
+        width:100%;
+        float: left;
+    }
+    .cont4 .right .cont-p .top .p1{
+        float: left;
+        font-size:0.3rem;
+    }
+
+    .cont4 .right .cont-p .top .p2{
+        float: right;
+        margin-right:0.2rem;
+        color: #4f7dfd;
+        font-size:0.3rem;
+    }
+     .cont4 .right .bottom p:nth-of-type(1){
+        margin-top:0.5rem;
+    }
+     .cont4 .right .bottom p{
+        font-size:0.24rem;
+        line-height:0.4rem;
+    }
+
+     .cont4 .right{
+        font-size:0.3rem;
+        float: left;
+        width:80%;
+        height:100%;
+        margin-top:0.3rem;
+    }
+</style>
+
+
+
+<div class="cont4">
+    <div class="content" ng-repeat="reject in reject_list">
+        <div class="left">
+            <div class="cont-img">
+                <img ng-src="http://{{reject.logo}}" alt="">
+            </div>
+        </div>
+        <div class="right">
+            <div class="cont-p">
+                <div class="top">
+                    <p class="p1" ng-bind="reject.name"></p>
+                    <p class="p2">{{(reject.loan_price == null)?'':'￥'+ reject.loan_price}}</p>
+                </div>
+                <div class="bottom">
+                    <p>否决时间：{{reject.confirm_time}}</p>
+                    <p>否决原因：您的征信审核不符合条件</p>
+                    <p>操作时间：2017-12-12 12:30:20</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,146 @@
+<div class="grzx" ng-controller="myController">
+<div id="user-box" ng-class="{true:'block',false:'none'}[isUserBox]">
+    <div style="background-color: #4f7dfd;">
+
+        <div class="tx" >
+            <form action="">
+            <div class="img">
+                <!--<img ng-src="__ASSETS__user/images/xd_logo.png" alt="">-->
+                <label for="upimg"><img ng-src="http://{{user_list.headimg}}" id="preview"></label>
+                <input type="file" id="upimg" class="none" accept="image/jpg,image/jpeg,image/png" multiple="false" name="filename"/>
+                <img ng-src="{{previewName}}" alt="">
+            </div>
+            </form>
+            <!--<p class="xm" ng-click="cardUrl()" ng-bind="code.code == 1?user_list.user_name:name"></p>--> 
+            <p class="xm" ng-bind="user_list.phone"></p>
+            <div id="tishi">{{imgtips}}</div>
+            <div class="tx-oul">
+                <ul>
+                    <!--<li>-->
+                        <!--<p>{{(user_list.applying_nub == null)?0:user_list.applying_nub}}</p>-->
+                        <!--<p>申请中</p>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<p>{{(user_list.passed_nub == null)?0:user_list.passed_nub}}</p>-->
+                        <!--<p>已通过</p>-->
+                    <!--</li>-->
+                    <li>
+                        <p >{{(user_list.invite_nub == null)?0:user_list.invite_nub}}</p>
+                        <p>累计开卡</p>
+                    </li>
+                    <li>
+                        <p>{{(user_list.total_loan == null)?0:user_list.total_loan}}</p>
+                        <p>累计贷款</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!--我的信用卡-->
+    <div class="content">
+        <ul>
+            <li>
+                <span class="s-img"><img src="__ASSETS__user/images/grzx/A_grzx_icon.png" alt=""></span>
+                <a ui-sref="myLoan.creditCard({type:'type1'})">
+                    <p >我的信用卡</p>
+                </a>
+
+                <span ><img src="__ASSETS__user/images/go.png" alt=""></span>
+            </li>
+            <li>
+
+                <span class="s-img"><img src="__ASSETS__user/images/grzx/B_grzx_icon.png" alt=""></span>
+                <a ui-sref="myLoan.money({type:'type2'})">
+                    <p >我的贷款</p>
+                </a>
+                <span ><img src="__ASSETS__user/images/go.png" alt=""></span>
+            </li>
+            <!--<li>-->
+
+                <!--<span class="s-img"><img src="__ASSETS__user/images/grzx/C_grzx_icon.png" alt=""></span>-->
+                <!--<p >我的收款账号</p>-->
+                <!--<span ><img src="__ASSETS__user/images/go.png" alt=""></span>-->
+            <!--</li>-->
+            <!--<li>-->
+
+                <!--<span class="s-img"><img src="__ASSETS__user/images/grzx/D_grzx_icon.png" alt=""></span>-->
+                <!--<a href="https://ipcrs.pbccrc.org.cn/">-->
+                    <!--<p >我的征信</p>-->
+                <!--</a>-->
+                <!--<span ><img src="__ASSETS__user/images/go.png" alt=""></span>-->
+            <!--</li>-->
+            <!--<li>-->
+
+                <!--<span class="s-img"><img src="__ASSETS__user/images/grzx/E_grzx_icon.png" alt=""></span>-->
+                <!--<p >帮助与反馈</p>-->
+                <!--<span ><img src="__ASSETS__user/images/go.png" alt=""></span>-->
+            <!--</li>-->
+
+        </ul>
+    </div>
+
+    <!--退出账号-->
+    <div class="tczh">
+        <div ng-click="pop()">退出账号</div>
+
+        <!--弹出蒙版-->
+        <div class="popup">
+            <div class="box">
+                <p class="cance2">&times;</p>
+                <p class="p1">提示</p>
+                <p class="p2">确定要退出吗？</p>
+                <button ng-click="yes()">确认</button>
+                <button ng-click="no()">取消</button>
+                <p class="p3">请先登录</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!--弹出框-->
+    <div class="all" ng-class="{true:'block',false:'none'}[islogin]">
+        <div class="header">
+            <div class="ox" ng-click="close()">&times;</div>
+            <div class="zx">
+                <p>登录</p>
+            </div>
+        </div>
+        <div class="send">
+            <div class="zsxm">
+                <span>真实姓名</span>
+                <div>
+                    <input type="text" name="username" placeholder="请输入真实姓名" ng-model="realname" id="name">
+                    <p class="mp">请务必填写真实姓名</p>
+                </div>
+            </div>
+            <div class="sjhm">
+                <span>手机号码</span>
+                <div>
+                    <input type="number"  name="name" placeholder="请输入手机号码" ng-model="telphone"  id="telphone">
+                </div>
+
+            </div>
+            <div class="yzm1">
+                <span>验证码</span>
+                <div>
+                    <input type="number" name="yzm" placeholder=""   id="yzm" ng-model="yzm">
+                    <input type="button" name="iphone" value="获取验证码" ng-click="sendCodes('all')" id="yzmcode" >
+                    <p class="mpp" id="code"></p>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="dl" ng-click="sq()">登录</div>
+    </div>
+
+</div>
+<script>
+    $('.cance2').on('click',function () {
+        $('.popup').css({
+            display:"none"
+        })
+    })
+</script>
+

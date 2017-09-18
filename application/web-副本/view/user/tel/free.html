@@ -1,0 +1,100 @@
+
+    <!--免年费信用卡-->
+    <div class="tabCon_0" ng-controller="freeController" ng-app="app">
+        <!--精品推荐-->
+        <div class="cont1">
+            <div class="op"><span class="xx"><img src="__ASSETS__user/images/xixi.png" alt=""></span><p>精品推荐&gt;&gt;</p></div>
+
+            <div class="ka">
+                <div class="k-left">
+                    <p>光大福IC信用卡</p>
+                    <p><span>10元</span>抢电影票</p>
+                    <img src="__ASSETS__user/images/gdf.png" alt="">
+                </div>
+                <div class="k-right">
+                    <div class="k-top">
+                        <div class="k-top1">
+                            <p>中信银联标准IC金卡</p>
+                        </div>
+                        <div class="k-top2">
+                            <p>4小时 <span>1000元航延险</span> </p>
+                            <div class="img">
+                                <img src="__ASSETS__user/images/zxyl.png" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="k-top" style="border: none">
+                        <div class="k-top1">
+                            <p>招商YOUNG卡</p>
+                        </div>
+                        <div class="k-top2">
+                            <p>取现额度高达<span>100%</span> </p>
+                            <div class="img">
+                                <img src="__ASSETS__user/images/zh.png" alt="">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--银行中心-->
+        <div class="bank">
+            <div class="op"><span class="xx"><img src="__ASSETS__user/images/xixi.png" alt=""></span><p>银行中心&gt;&gt;</p></div>
+            <ul>
+
+                    <li  ng-repeat="bank in bank_list">
+                        <a href="" ui-sref="bankCenter({bankid:bank.id})">
+                        <img ng-src="http://{{bank.bank_logo}}">
+                        <p ng-bind="bank.bank_name"></p>
+                        </a>
+                    </li>
+
+
+
+            </ul>
+        </div>
+        <!--主题精选-->
+        <div class="cont3">
+            <div class="op"><span class="xx"><img src="__ASSETS__user/images/xixi.png" alt=""></span>主题精选&gt;&gt;</div>
+            <div class="z-content">
+                <ul>
+                    <li ng-repeat="theme in index_theme">
+                        <div class="left">
+                            <p >{{theme.name}} <span class="ospan">&gt;</span></p>
+
+                            <p ng-bind="theme.remark"></p>
+                        </div>
+                        <div class="right">
+                            <img ng-src="http://{{theme.card_logo}}" alt="">
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--热门精选-->
+        <div class="cont4" >
+            <div class="op"><span class="xx"><img src="__ASSETS__user/images/xixi.png" alt=""></span>热门精选&gt;&gt;</div>
+            <div class="content"  ng-repeat="card in bank_card" ng-click="cardUrl(card.id)">
+                <div class="img">
+                    <img ng-src="http://{{card.card_logo}}">
+                </div>
+                <div class="text">
+                    <p class="pp"><span>精选</span>{{card.card_details}}</p>
+                    <p>关注：{{card.follow_number}}</p>
+                </div>
+            </div>
+            <div class="content">
+
+            </div>
+        </div>
+
+
+        <!--弹出框-->
+     <login></login>
+
+    </div>
+
+
+

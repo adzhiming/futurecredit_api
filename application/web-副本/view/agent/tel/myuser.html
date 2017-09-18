@@ -1,0 +1,17 @@
+<div id="header" class="text-center">
+   <a class="back" href="#/subIndex">×</a>
+   我的用户
+</div>
+
+
+<div class="header-three-nav four-nav">
+    <a ui-sref="myuser.yonghu" ng-click="tap('yonghu')" ng-class="{active:navName=='yonghu'}">用户</a>
+    <a ui-sref="myuser.access" ng-click="tap('access')" ng-class="{active:navName=='access'}">访问</a>
+    <a ui-sref="myuser.crdApplyRecord" ng-click="tap('crdApplyRecord')" ng-class="{active:navName=='crdApplyRecord'}">申卡记录</a>
+    <a ui-sref="myuser.loanApplyRecord" ng-click="tap('loanApplyRecord')" ng-class="{active:navName=='loanApplyRecord'}">申贷记录</a>
+</div>
+<div style="height:1.66rem;"></div>
+<div ui-view></div>
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>

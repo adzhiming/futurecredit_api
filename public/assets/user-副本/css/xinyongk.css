@@ -1,0 +1,531 @@
+
+/*底部*/
+.dingb{
+    width:100%;
+}
+.dingb img{
+    width:100%;
+}
+/*头部*/
+.header{
+    width:100%;
+    /*height:120px;*/
+    background-color: #ffffff;
+}
+.header ul {
+    display: flex;
+}
+.header ul li{
+    flex: 1;
+    text-align: center;
+    margin-bottom:10px;
+}
+.header ul li img{
+    width:60%;
+    margin-top:0.34rem;
+}
+.header ul li p{
+    font-size:0.28rem;
+}
+
+/*免年卡和白金卡*/
+
+li{
+    list-style: none;
+    float:left;
+}
+.tabCon{
+    clear: both;
+}
+.tabCon_1{
+    display: none;
+}
+
+.tanContainer{
+    margin-top:0.2rem;
+}
+.tanContainer ul li{
+    font-size:0.3rem;
+    width:50%;
+    text-align: center;
+    line-height:0.8rem;
+    background-color: #fff;
+}
+.curr{
+    color:#4f7dfd ;
+    border-bottom: 1px solid #4f7dfd;
+}
+/*精品推荐*/
+.xixi{
+    display: inline-block;
+    width:0.4rem;
+    margin-left:0.15rem;
+    margin-right:0.2rem;
+    position: relative;
+    top:0.1rem;
+}
+.xixi img{
+    width:100%;
+    height:100%;
+}
+.tanContainer .tabCon_0 .cont1{
+    border-bottom: 1px solid #e4e4e4;
+}
+.tanContainer .tabCon_0 .op p{
+    display: inline-block;
+    font-size:0.28rem;
+}
+.tanContainer .tabCon_0 .op{
+    border-top: 1px solid #f2f2f2;
+    border-bottom: 1px solid #e4e4e4;
+    line-height:0.8rem;
+    background-color: #fff;
+}
+.tanContainer .tabCon_0 .ka{
+    display: flex;
+    width:100%;
+    height:2.8rem;
+    background-color: #fff;
+}
+.tanContainer .tabCon_0 .ka >div{
+    flex: 1;
+}
+.tanContainer .tabCon_0 .ka .k-left{
+    border-right: 1px solid #e4e4e4;
+    text-align: center;
+}
+.tanContainer .tabCon_0 .ka .k-left p:nth-of-type(1){
+    font-size:0.28rem;
+    color: #4f7dfd;
+    margin-top: 0.2rem;
+}
+.tanContainer .tabCon_0 .ka .k-left p:nth-of-type(2){
+    font-size:0.24rem;
+    margin-top:0.1rem;
+}
+.tanContainer .tabCon_0 .ka .k-left p:nth-of-type(2) span{
+    color: red;
+}
+.tanContainer .tabCon_0 .ka .k-left img{
+    margin-top:0.1rem;
+    width:50%;
+}
+
+.tanContainer .tabCon_0 .ka .k-right{
+    display: flex;
+    flex-direction: column;
+}
+.tanContainer .tabCon_0 .ka .k-right>div{
+    flex: 1;
+    width:100%;
+    height:50%;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top{
+    box-sizing: border-box;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top1{
+    height:30%;
+    font-size:0.28rem;
+    color: #4f7dfd;
+    margin-left:0.1rem;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top1 p{
+    margin-top:0.02rem;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top2{
+    height:70%;
+    font-size:0.24rem;
+    margin-top:0.05rem;
+    margin-left:0.1rem;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top2 p{
+    width:60%;
+    float: left;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top2 p span{
+    color: red;
+}
+
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top2 .img{
+    float: right;
+    width:30%;
+    margin-right:0.1rem;
+    margin-bottom:0.1rem;
+}
+.tanContainer .tabCon_0 .ka .k-right .k-top .k-top2 .img img{
+    width:100%;
+}
+
+
+/*银行中心*/
+.bank{
+    margin-top:0.1rem;
+}
+.bank ul{
+    overflow: hidden;
+}
+.bank ul li {
+    width:33.3%;
+}
+.bank ul li img{
+    width:50%;
+    margin-top:0.1rem;
+}
+.bank ul li p{
+    font-size:0.22rem;
+    /*margin-bottom:10px;*/
+    margin-top:-0.4rem;
+}
+/*主题精选*/
+.cont3{
+    width:100%;
+    margin-top:10px;
+    background-color: #fff;
+}
+.cont3 .op{
+    font-size:0.28rem;
+}
+.cont3 ul{
+    overflow: hidden;
+}
+.cont3 ul li{
+    width:49.8%;
+    /*height:90px;*/
+}
+
+.cont3 ul li .left{
+    width:70%;
+    float: left;
+    margin-top:0.1rem;
+
+}
+.cont3 ul li .left p{
+    text-align: left;
+    line-height:0.5rem;
+    margin-left:0.3rem;
+
+}
+.cont3 ul li .left p:nth-of-type(1){
+    font-size:0.28rem;
+}
+.cont3 ul li .left .ospan{
+    text-align: center;
+    margin-left:0.1rem;
+    width:0.3rem;
+    display: inline-block;
+    line-height:0.3rem;
+    color: #cccccc;
+    border: 1px solid #cccccc;
+    border-radius: 50%;
+}
+
+.cont3 ul li .left p:nth-of-type(2){
+    font-size:0.22rem;
+
+}
+.cont3 ul li .right{
+    width:30%;
+    height:100%;
+    float: left;
+}
+.cont3 ul li .right img{
+    width:90%;
+    margin-top:0.2rem;
+}
+.cont3 ul li:nth-child(1){
+    border-right: 1px solid #e4e4e4;
+}
+.cont3 ul li:nth-child(3){
+    border-top: 1px solid #e4e4e4;
+    width:49.6%;
+
+}
+.cont3 ul li:nth-child(4){
+    border-left: 1px solid #e4e4e4;
+    border-top: 1px solid #e4e4e4;
+}
+/*热门精选*/
+.cont4{
+    margin-top:0.1rem;
+}
+.cont4 .op{
+    font-size:0.28rem;
+}
+.cont4 .content{
+    border-bottom: 1px solid #e4e4e4;
+    height:2.2rem;
+    background-color: #fff;
+}
+.cont4 .content .img{
+    width:33.3%;
+    float: left;
+}
+.cont4 .content .img img{
+    width:80%;
+    margin-top:0.5rem;
+    margin-left:0.2rem;
+}
+.cont4 .content .text{
+    width:64%;
+    height:100%;
+    float: left;
+    padding-top:0.3rem;
+}
+
+.cont4 .content .text .pp{
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.cont4 .content .text p:nth-of-type(1){
+    line-height:0.5rem;
+    margin-top:0.3rem;
+    font-size:0.28rem;
+}
+.cont4 .content .text p:nth-of-type(2){
+    margin-top:0.1rem;
+    font-size:0.26rem;
+    color: #cccccc;
+}
+.cont4 .content .text span{
+    text-align: center;
+    width:0.8rem;
+    height:0.4rem;
+    display: inline-block;
+    line-height:0.4rem;
+    color: #ffffff;
+    border: 1px solid ;
+    border-radius:0.2rem;
+    font-size:0.28rem;
+    background-color: #4f7dfd;
+}
+
+
+/*白金信用卡*/
+.tabCon_1 .content{
+    width:100%;
+    height:2.1rem;
+    background-color: #fff;
+    border-top: 0.01px solid #e4e4e4;
+}
+.tabCon_1 .content .content-p{
+    width:70%;
+    height:100%;
+    float: left;
+}
+.tabCon_1 .content .content-p .top{
+    height:40%;
+    padding-top:1px;
+    margin-left:0.35rem;
+}
+.tabCon_1 .content .content-p .top p{
+    margin-top:0.4rem;
+    font-size:0.28rem;
+}
+
+.tabCon_1 .content .content-p .bottom{
+    height:60%;
+}
+.tabCon_1 .content .content-p .bottom .left{
+    float: left;
+    width:70%;
+}
+.tabCon_1 .content .content-p .bottom .left p{
+    margin-left:0.35rem;
+    font-size:0.24rem;
+    line-height:0.4rem;
+}
+
+.tabCon_1 .content .content-p .bottom .right{
+    float: right;
+    width:30%;
+}
+.tabCon_1 .content .content-p .bottom .right p{
+    text-align: left;
+    font-size:0.24rem;
+    margin-left:0.2rem;
+}
+
+.tabCon_1 .content .content-img{
+    width:30%;
+    float: left;
+}
+.tabCon_1 .content .content-img img{
+    width:60%;
+    margin-top:0.5rem;
+    margin-left:0.4rem;
+}
+
+
+
+/*弹出框*/
+.all{
+    display:none ;
+    width:100%;
+    height:100vh;
+    background-color:rgba(0,0,0,0.5);
+    position: fixed;
+    left:0;
+    top:0;
+    z-index: 1;
+
+}
+.cancel{
+    position: relative;
+    left:4.6rem;
+    top:-0.03rem;
+    font-size:0.5rem;
+}
+
+.sqzh .my-nav .ox{
+    width:20%;
+    line-height:0.4rem;
+    border-right: 1px solid #ffffff;
+    font-size:0.5rem;
+    margin-top:0.3rem;
+    height:0.4rem;
+    float: left;
+}
+.sqzh .my-nav .zx{
+    width:70%;
+    float: left;
+}
+.sqzh .my-nav .zx p{
+    margin-right:0.6rem;
+}
+
+/*未莱信贷*/
+.logo{
+    width:100%;
+    height:4rem;
+    position: relative;
+}
+.logo div{
+    position: absolute;
+    width:2rem;
+    height:2rem;
+    background-color: #4f7dfd;
+    left:50%;
+    top:50%;
+    margin-left:-1.1rem;
+    margin-top:-1.1rem;
+    font-size:0.7rem;
+    color: #ffffff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+/*form提交表单*/
+form{
+    width:100%;
+    text-align: center;
+    padding-top:1px;
+}
+form input{
+    box-sizing: border-box;
+    outline:none;
+    border: none;
+    padding-left:0.7rem;
+    font-size:0.26rem;
+    height:0.6rem;
+
+}
+.all .login{
+    font-size:0.2rem;
+    margin-top:0.1rem;
+}
+form .name{
+    width:80%;
+    border-bottom: 1px solid #cccccc;
+
+}
+form #telphone{
+    width:80%;
+    border-bottom: 1px solid #cccccc;
+    height:0.8rem;
+
+}
+form div .input input:nth-of-type(1){
+    width:66.6%;
+    height:0.8rem;
+    font-size:0.26rem;
+}
+form div .input input:nth-of-type(2){
+    width:33.3%;
+    text-align: center;
+    height:0.6rem;
+    background-color: #4f7dfd;
+    color: #FFFFFF;
+    font-size:0.2rem;
+    border: none;
+    border-radius: 0.05rem;
+    padding-left:0;
+
+}
+form p{
+    font-size:0.26rem;
+    margin-top:0.3rem;
+}
+.ljsq{
+    position: relative;
+    top:0.1rem;
+    width:80%;
+    height:0.6rem;
+    text-align: center;
+    margin-left:10%;
+    background-color: #4f7dfd;
+    line-height:0.6rem;
+    color: #ffffff;
+    border-radius: 0.05rem
+}
+
+.ipt1{
+    background:url("../images/sj.png")no-repeat 10px center;
+    background-size: 20px 25px;
+}
+.ipt2{
+    background:url("../images/mim.png")no-repeat 10px center;
+    background-size: 20px 25px;
+}
+
+.box{
+    border-radius: 0.1rem;
+    width:80%;
+    height:5rem;
+    background-color:#FFFFFF;
+    position: absolute;
+    left:10%;
+    top:30%;
+}
+.input{
+    margin:0.3rem auto;
+    width:80%;
+    height:0.8rem;
+    border-bottom: 1px solid #cccccc;
+}
+.input input{
+    float: left;
+
+}
+#code{
+    margin-left:0.4rem;
+    margin-top:-0.1rem;
+    font-size:0.24rem;
+}
+input[type=button], input[type=submit], input[type=file], button {
+    cursor: pointer; -webkit-appearance: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+

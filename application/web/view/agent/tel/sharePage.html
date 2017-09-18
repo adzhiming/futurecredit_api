@@ -1,0 +1,47 @@
+<div id="header" class="text-center">
+   <a class="back" href="javascript:history.back()">×</a>
+   分享链接
+</div>
+<div class="header-gao"></div>
+
+
+<div class="fenxian">
+  <div class="fenlist">
+    <div class="show-er" ng-click="shower('xy')"></div>
+    <!-- <img src="__ASSETS__/agent/img/xyk.png" ng-click="tiaozhuan(card.cardurl)"/> -->
+    <img src="__ASSETS__/agent/img/xyk.png" ng-click="tiaozhuan('xy')"/>
+  </div>
+  <div class="fenlist">
+    <div class="show-er" ng-click="shower('dk')"></div>
+    <!-- <img src="__ASSETS__/agent/img/dk.png" ng-click="tiaozhuan(card.loanurl)"/> -->
+    <img src="__ASSETS__/agent/img/dk.png" ng-click="tiaozhuan('xd')"/>
+  </div>
+  <div class="fenlist">
+      <div class="show-er" ng-click="shower('zh')"></div>
+      <img src="__ASSETS__/agent/img/jh.png" ng-click="tiaozhuan('zh')"/>
+  </div>
+</div>
+
+<img src="__ASSETS__/agent/img/fen-close.png" class="fen-close" ng-class="{true:'block',false:'none'}[close]" ng-click="closeFun()"/>
+<div class="fenxian-cen" ng-class="{true:'block',false:'none'}[cen]" >
+  <div class="text-center tishi-erwei">长按二维码保存</div>
+</div>
+
+
+
+
+{$xykhtml}
+{$xdhtml}
+{$juhehtml}
+
+<div id="xiyongkanew"></div>
+<div id="xindainew"></div>
+<div id="zhgxnew"></div>
+
+
+
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>
+
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>未莱信贷</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+    <style>
+
+*{padding:0px;margin:0px;}
+body{width:100vh;height:100vh;overflow:hidden;background:url('__ASSETS__/agent/img/bj.png');background-size:100% 100%;}
+.gong{position:absolute;width:26%;top:28%;right:35%;}
+.banka{position:absolute;width:28%;top:59%;right:8%;}
+.dk{position:absolute;width:28%;bottom:11%;left:10%;}
+.banka img,.dk img,.gong img{width:100%;}
+
+    </style>
+
+
+
+</head>
+<body>
+    <a href="#" class="gong" ><img src="__ASSETS__/agent/img/gzgz.png" onclick="qiehuan0(this)"/></a>
+    <a class="banka"><img src="__ASSETS__/agent/img/msbk.png"  onclick="qiehuan(this)"/></a>
+    <a class="dk"><img src="__ASSETS__/agent/img/msdk.png"  onclick="quehuan1(this)"/></a>
+</body>
+<script type="text/javascript" src="__ASSETS__/agent/js/jquery.js"></script>
+<script type="text/javascript">
+    var url = location.search;
+    var rout = "{$api_url}"+"agent/";
+    var routUser = "{$api_url}"+"user/";
+
+    if (url.indexOf("?") != -1) {   
+        var str = url.substr(1);
+        var did = str.slice(str.indexOf('=')+1)
+        console.log(did)
+        $.post(rout+'getAgentShareUrl',{id:did},function(res){
+            $('.banka').attr('href',res.data.cardurl);
+            $('.dk').attr('href',res.data.loanurl);
+        })
+    }
+
+    function qiehuan0(e){
+        e.setAttribute('src',"__ASSETS__/agent/img/gzgz1.png");
+    }
+    function qiehuan(e){
+        e.setAttribute('src',"__ASSETS__/agent/img/msbk_1.png");
+    }
+    function quehuan1(e){
+        e.setAttribute('src',"__ASSETS__/agent/img/msdk_1.png");
+    }
+</script>
+</html>

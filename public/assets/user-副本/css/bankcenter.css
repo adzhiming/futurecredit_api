@@ -1,0 +1,126 @@
+
+.bankCenter{
+    width:100%;
+    background-color: #fff;
+    height:2.2rem;
+}
+.bankCenter .bank-top{
+    width:100%;
+    float: left;
+    height:1.7rem;
+}
+.bankCenter .bank-top .img{
+    overflow: hidden;
+    width:1rem;
+    height:1rem;
+    float: left;
+
+    margin-top:0.3rem;
+    margin-left:0.3rem;
+    text-align: center;
+
+}
+.bankCenter .bank-top .img img{
+    width:1rem;
+    height:1rem;
+    border-radius: 100%;
+}
+
+.bankCenter .bank-top .name p{
+    margin-left:0.3rem;
+}
+.bankCenter .bank-top .name p:nth-of-type(1){
+    margin-top:0.4rem;
+    font-size:0.28rem;
+}
+.bankCenter .bank-top .name p:nth-of-type(2){
+    font-size:0.26rem;
+    color: #cccccc;
+    margin-top:0.1rem;
+}
+
+.bankCenter .bank-top .name{
+    float: left;
+}
+.bankCenter .bank-bottom{
+    width:100%;
+    float: left;
+}
+.bankCenter .bank-bottom ul{
+    display: flex;
+}
+.bankCenter .bank-bottom ul li{
+    flex: 1;
+    text-align: center;
+    font-size:0.26rem;
+    color: #cccccc;
+}
+.bankCenter .bank-bottom ul li span{
+    color: #000000;
+}
+
+
+/*银行卡*/
+.bank-card{
+    width:100%;
+    background-color: #fff;
+    margin-top:0.05rem;
+    height:1.8rem;
+}
+.bank-card .card-left{
+    width:75%;
+    background-color:#FFFFFF;
+    float: left;
+    padding-left:0.2rem;
+    height:1.8rem;
+
+
+}
+.bank-card .card-left .top p{
+    margin-top:0.2rem;
+    font-size:0.28rem;
+}
+.bank-card .card-left .bottom .left{
+    width:60%;
+    float: left;
+    font-size:0.22rem;
+    line-height:0.3rem;
+    margin-top:0.1rem;
+    color: #cccccc;
+    margin-bottom:0.3rem;
+}
+.bank-card .card-left .bottom .right{
+    width:40%;
+    float: right;
+    margin-top:0.1rem;
+    font-size:0.24rem;
+    text-align: center;
+}
+.bank-card .card-left .bottom .right p{
+    margin-left:0.3rem;
+}
+
+
+.bank-card .card-right{
+    width:25%;
+    background-color:#FFFFFF;
+    height:1.8rem;
+    float: left;
+}
+.bank-card .card-right .left{
+    width:70%;
+    float: left;
+}
+.bank-card .card-right .left img{
+    width:70%;
+    margin-top:0.6rem;
+}
+.bank-card .card-right .right{
+    width:30%;
+    float: left;
+}
+.bank-card .card-right .right img{
+    width:35%;
+    margin-top:0.7rem;
+    margin-bottom:0.5rem;
+}

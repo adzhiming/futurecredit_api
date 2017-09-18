@@ -1,0 +1,228 @@
+
+
+<div class="daili-two-nav clearfix font28">
+    <div class="xinyongka-nav" data-box="xinyongka" ng-click="navtap('xinyongka')">
+        <img src="__ASSETS__/agent/img/xyoa.png"/>
+        信用卡
+    </div>
+    <div class="dakuan-nav" data-box="dakuan" ng-click="navtap('dakuan')">
+        <img src="__ASSETS__/agent/img/dkbj.png"/>
+        贷款
+    </div>
+</div>
+
+<div class="baojia-box xinyongka" >
+    <div class="row" more>
+        <img class="left-icon" src="__ASSETS__/agent/img/chanp.png"/><span>信用卡产品(元)</span>
+        <img class="more" src="__ASSETS__/agent/img/bottom.png"/>
+    </div>
+    <div class="canpin-list-box" style="display:none;">
+        <table style="border-collapse:collapse;width:100%;">
+            <tr class="theader">
+                <th>名称</th>
+                <th ng-show="{{user.level <= 0}}">特级</th>
+                <th ng-show="{{user.level <= 1}}">一级</th>
+                <th ng-show="{{user.level <= 2}}">二级</th>
+                <th ng-show="{{user.level <= 3}}" class="{{user.level == 3?'width50':''}}">三级</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="key in xydefault">
+                <td ng-bind="key.card_name" width="30%" class="{{user.level == 3?'width50':''}}"></td>
+                <td ng-bind="key.level_price + key.price_unit"  ng-show="{{user.level <= 0}}"></td>
+                <td ng-bind="key.level1_price + key.price_unit" ng-show="{{user.level <= 1}}"></td>
+                <td ng-bind="key.level2_price + key.price_unit" ng-show="{{user.level <= 2}}"></td>
+                <td ng-bind="key.level3_price + key.price_unit" ng-show="{{user.level <= 3}}" class="{{user.level == 3?'width50':''}}"></td>
+                <td class="color-blue" ng-click="bianji(key.id,'xy',$index)" ng-show="{{user.level != 3}}">编辑</td>
+            </tr>
+        </table>
+    </div>
+
+    <div  ng-if="user.level < 3" class="row">
+        <img class="left-icon" src="__ASSETS__/agent/img/tdyh.png"/><span>特定用户报价</span>
+        <span class="btn pull-right" ui-sref="teding_add({type:'xy',page:pageset.currentPage})">添加</span>
+    </div>
+
+
+    <div  ng-if="user.level < 3"  class="canpin-list paddingtop15" ng-repeat="key in xygiven">
+        <p class="clearfix padding1">
+            <span class="pull-left">产品:<span class="color-fen" ng-bind="key.card_name"></span></span>
+            <span class="pull-right time" ng-bind="key.update_time"></span>
+        </p>
+        <table class="padding1">
+            <tr>
+                <td>用户:{{key.user_name }}</td>
+                <td>所属推广:{{key.parent_agenter }}</td>
+                <td class="text-right">创建者:{{key.creater_name }}</td>
+            </tr>
+            <tr>
+                <td ng-show="{{user.level <= 1}}" ng-bind="'一级:'+key.level1_price"></td>
+                <td ng-show="{{user.level <= 2}}" ng-bind="'二级:'+key.level2_price"></td>
+                <td ng-show="{{user.level <= 3}}" ng-bind="'三级:'+key.level3_price" class="{{user.level == 2?'text-left':user.level == 3?'':'text-right'}}"></td>
+            </tr>
+        </table>
+        <div class="contro-btn">
+            <span ui-sref="teding_edit({agentid:key.agent_id,did:key.id,name:key.user_name,lv0_p:key.level_price,lv1_p:key.level1_price,lv2_p:key.level2_price,lv3_p:key.level3_price,bank_name:key.bank_name,bank_id:key.bank_id,page:pageset.currentPage,cardid:key.card_id,cardname:key.card_name,pricetype:key.price_type})"><i></i>编辑</span>
+            <span ng-click="delete(key.id,'xy',0,1)"><i></i>删除</span>
+        </div>
+    </div>
+    <p ng-hide="tip.isHide" class="text-center padding10">{{tip.text}}</p>
+    <div paginations conf="pageset"  ng-if="user.level < 3"  ></div>
+
+</div>
+
+
+<div class="baojia-box dakuan" >
+    <div class="row" more>
+        <img class="left-icon" src="__ASSETS__/agent/img/chanp.png"/><span>贷款产品(元)</span>
+        <img class="more" src="__ASSETS__/agent/img/bottom.png"/>
+    </div>
+    <div class="canpin-list-box zdy-table" style="display:none;">
+
+<!--         <table style="border-collapse:collapse;width:100%;">
+            <tr class="theader">
+                <th>名称</th>
+                <th>类型</th>
+                <th ng-show="{{user.level <= 0}}">特级</th>
+                <th ng-show="{{user.level <= 1}}">一级</th>
+                <th ng-show="{{user.level <= 2}}">二级</th>
+                <th ng-show="{{user.level <= 3}}" class="{{user.level == 3?'width50':''}}">三级</th>
+                <th></th>
+            </tr>
+        </table> -->
+        <div class="table-header">
+            <span ng-class="{0:'span15',1:'span20',2:'span20',3:'span33'}[user.level]">名称</span>
+            <span ng-class="{0:'span10',1:'span16',2:'span20',3:'span33'}[user.level]">类型</span>
+            <span ng-class="{0:'span15'}[user.level]" ng-show="{{user.level <= 0}}">特级</span>
+            <span ng-class="{0:'span15',1:'span18'}[user.level]" ng-show="{{user.level <= 1}}">一级</span>
+            <span ng-class="{0:'span15',1:'span18',2:'span20'}[user.level]" ng-show="{{user.level <= 2}}">二级</span>
+            <span ng-class="{0:'span15',1:'span18',2:'span20',3:'span33'}[user.level]" ng-show="{{user.level <= 3}}" class="{{user.level == 3?'width50':''}}">三级</span>
+            <span class="span10"></span>
+        </div>
+        <div ng-repeat="key in dkdefault" class="xd-table">
+            <span class="left-td" ng-bind="key[0].card_name" ng-class="{0:'span15',1:'span20',2:'span21',3:'span33'}[user.level]"></span>
+            <div ng-repeat="keys in key" class="right-info">
+                <span ng-bind="keys.fy_type == 1?'CPA':'CPS'" ng-class="{0:'span13',1:'span21',2:'span30',3:'span20'}[user.level]"></span>
+                <span ng-show="{{user.level <= 0}}" ng-bind="keys.level_price + keys.price_unit" ng-class="{0:'span19'}[user.level]"></span>
+                <span ng-show="{{user.level <= 1}}" ng-bind="keys.level1_price + keys.price_unit" ng-class="{0:'span19',1:'span23'}[user.level]"></span>
+                <span ng-show="{{user.level <= 2}}" ng-bind="keys.level2_price + keys.price_unit" ng-class="{0:'span19',1:'span23',2:'span28',3:'span20'}[user.level]"></span>
+                <span ng-show="{{user.level <= 3}}" ng-bind="keys.level3_price + keys.price_unit" ng-class="{0:'span19',1:'span23',2:'span28',3:'span20'}[user.level]"></span>
+                <span class="color-blue" ng-click="bianjiXd(keys.id,'dk',$index,$parent.$index)" ng-show="{{user.level != 3}}">编辑</span>
+            </div>
+        </div>
+                
+<!--             <tr ng-repeat="key in dkdefault" >
+                <div ng-repeat="keys in key">
+                    <td ng-bind="keys.card_name"></td>
+                    <td ng-bind="keys.fy_type == 1?'CPA':'CPS'"></td>
+                </div>
+            </tr> -->
+
+
+            <!-- <tr ng-repeat="key in dkdefault"> -->
+
+<!--                 <td ng-bind="key.card_name" width="30%" class="{{user.level == 3?'width50':''}}"></td>
+                <td>1</td>
+                <td ng-bind="key.level_price + key.price_unit"  ng-show="{{user.level <= 0}}"></td>
+                <td ng-bind="key.level1_price + key.price_unit" ng-show="{{user.level <= 1}}"></td>
+                <td ng-bind="key.level2_price + key.price_unit" ng-show="{{user.level <= 2}}"></td>
+                <td ng-bind="key.level3_price + key.price_unit" ng-show="{{user.level <= 3}}" class="{{user.level == 3?'width50':''}}"></td>
+                <td class="color-blue" ng-click="bianji(key.id,'dk',$index)" ng-show="{{user.level != 3}}">编辑</td> -->
+            <!-- </tr> -->
+        
+    </div>
+
+    <div ng-if="user.level < 3" class="row">
+        <img class="left-icon" src="__ASSETS__/agent/img/tdyh.png"/><span>特定用户报价</span>
+        <span class="btn pull-right" ui-sref="teding_add_dk({type:'dk',page:pagesets.currentPage})">添加</span>
+    </div>
+
+    <div ng-if="user.level < 3"   class="canpin-list paddingtop15" ng-repeat="key in dkgiven">
+        <p class="clearfix padding1">
+            <span class="pull-left">产品:<span class="color-fen" ng-bind="key[0].card_name"></span></span>
+            <span class="pull-right time" ng-bind="key[0].update_time"></span>
+        </p>
+        <table class="padding1" style="padding-left:0.37rem;">
+            <tr>
+                <td>用户:{{key[0].user_name}}</td>
+                <td>所属推广:{{key[0].parent_agenter}}</td>
+                <td class="text-right">创建者:{{key[0].creater_name}}</td>
+            </tr>
+<!--             <tr>
+                <td ng-show="{{user.level <= 1}}" ng-bind="'一级:'+key.level1_price"></td>
+                <td ng-show="{{user.level <= 2}}" ng-bind="'二级:'+key.level2_price"></td>
+                <td ng-show="{{user.level <= 3}}" ng-bind="'三级:'+key.level3_price" class="{{user.level == 2?'text-left':user.level == 3?'':'text-right'}}"></td>
+            </tr> -->
+        </table>
+
+        <table class="new-table-dk">
+            <tr>
+                <td>类型</td>
+                <td>一级</td>
+                <td>二级</td>
+                <td>三级</td>
+            </tr>
+            <tr ng-repeat="keys in key">
+                <td ng-bind="keys.fy_type == 1?'CPA':'CPS'"></td>
+                <td ng-show="{{user.level <= 1}}" ng-bind="keys.level1_price"></td>
+                <td ng-show="{{user.level <= 2}}" ng-bind="keys.level2_price"></td>
+                <td ng-show="{{user.level <= 3}}" ng-bind="keys.level3_price" class="{{user.level == 2?'text-left':user.level == 3?'':'text-right'}}"></td>
+            </tr>
+        </table>
+
+        <div class="contro-btn">
+            <span ui-sref="teding_edit_dk({agentid:key[0].agent_id,did:key[0].id,bank_id:key[0].bank_id,page:pagesets.currentPage})"><i></i>编辑</span>
+            <span ng-click="delete(key[0].agent_id,'dk',key[0].card_id,2)"><i></i>删除</span>
+        </div>
+    </div>
+
+
+
+    <p ng-hide="tip.isHide" class="text-center padding10" >{{tips.text}}</p>
+    <div paginations conf="pagesets" ng-if="user.level < 3"  ></div>
+
+</div>
+
+
+
+<div class="cen"></div>
+<div class="bianji-box font28 box-show">
+    <p class="title">编辑</p>
+    <form>
+        <p class="clearfix info">
+            <span class="pull-left">名称:{{thisInfo.card_name}}</span>
+        </p>
+        <div class="input-row" >
+            <span>返佣类型:{{thisInfo.fy_type == '1'?'CPA':'CPS'}}</span>
+        </div>
+        <div class="input-row" style="height:auto;line-height:0.5rem;">
+            <span>返佣规则:{{thisInfo.rule_description | moreRule}}<b class="{{thisInfo.rule_description.length>30?'ng-show':'ng-hide'}} color-blue" ng-click="moreGz(thisInfo.rule_description)">更多</b></span>
+        </div>
+        <div class="input-row" ng-show="{{user.level == 0}}">
+            <span>特级价格</span>
+            <input type="text" ng-model="thisInfo.level_price" ng-disabled="true" />
+        </div>
+        <div class="input-row" ng-show="{{user.level <= 1 }}">
+            <span>一级价格</span>
+            <input type="text" ng-model="thisInfo.level1_price" ng-disabled="{{user.level >= 1?'true':'false'}}"/>
+        </div>
+        <div class="input-row" ng-show="{{user.level <= 2 }}">
+            <span>二级价格</span>
+            <input type="text" ng-model="thisInfo.level2_price" ng-disabled="{{user.level >= 2?'true':'false'}}"/>
+        </div>
+        <div class="input-row" ng-show="{{user.level <= 3 }}">
+            <span>三级价格</span>
+            <input type="text" ng-model="thisInfo.level3_price" ng-disabled="{{user.level >= 3?'true':'false'}}"/>
+        </div>
+        <div class="btn-box">
+            <button class="btn" ng-click="bianjisubmit(thisInfo.id)">保存</button>
+            <button class="btn close-bianji" >取消</button>
+        </div>
+    </form>
+</div>
+
+<div class="guice-cen" ng-class="{true:'block',false:'none'}[isShowGz]"></div>
+<div class="guice-box font28 box-show" ng-class="{true:'block',false:'none'}[isShowGz]">
+    <p class="title">返佣规则详情</p>
+    <textarea readonly>{{morexq}}</textarea>
+    <span ng-click="closegz()" class="queren">确定</span>
+</div>

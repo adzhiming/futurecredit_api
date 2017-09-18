@@ -1,0 +1,108 @@
+
+<style>
+    /*底部*/
+    .dingb{
+        width:100%;
+        background-color: #4f7dfd;
+
+    }
+    .dingb img{
+        width:100%;
+    }
+    /*头部*/
+    .header{
+        width:100%;
+        /*height:120px;*/
+        background-color: #ffffff;
+    }
+    .header ul {
+        display: flex;
+    }
+    .header ul li{
+        flex: 1;
+        text-align: center;
+        margin-bottom:10px;
+    }
+    .header ul li img{
+        width:60%;
+        margin-top:0.34rem;
+    }
+    .header ul li p{
+        font-size:0.24rem;
+    }
+
+    /*免年卡和白金卡*/
+    .tab{
+        margin-top:0.1rem;
+    }
+    .tab ul{
+        overflow: hidden;
+    }
+    .tab ul li{
+        width:50%;
+        float: left;
+        line-height:0.8rem;
+        text-align: center;
+        background-color: #fff;
+    }
+    .tab ul li a{
+        border: none;
+        font-size:0.28rem;
+    }
+    .curr{
+        color:#4f7dfd ;
+        border-bottom: 1px solid #4f7dfd;
+    }
+</style>
+
+
+
+<!--头部-->
+<div class="dingb">
+    <img src="__ASSETS__user/images/banner1.png" alt="">
+</div>
+<!--导航-进度查询-->
+<div class="header">
+    <ul>
+        <li>
+            <img src="__ASSETS__user/images/cxjd_icon1.png" alt="">
+            <p>进度查询</p>
+        </li>
+        <li>
+            <img src="__ASSETS__user/images/wdzx_icon1.png" alt="">
+            <p>我的征信</p>
+        </li>
+        <li>
+            <img src="__ASSETS__user/images/bkgl_icon1.png" alt="">
+            <p>办卡攻略</p>
+        </li>
+        <li>
+            <img src="__ASSETS__user/images/yqhy_icon1.png" alt="">
+            <p>邀请好友</p>
+        </li>
+    </ul>
+</div>
+<!--免费和白金-->
+<div class="tab">
+    <ul class="tab1">
+
+        <li class="curr"><a href="" ui-sref="card.free">免年费信用卡</a></li>
+
+        <li><a href="" ui-sref="card.platinum">白金信用卡</a></li>
+    </ul>
+</div>
+
+<div>
+    <div ui-view></div>
+</div>
+<script>
+    function change(tab){
+        var $tab =  $(tab);
+        $tab.find("li").on("click",function(){
+            var index = $(this).index();
+            $(this).addClass("curr").siblings().removeClass("curr");
+        })
+    }
+    change(".tab1");
+</script>
+

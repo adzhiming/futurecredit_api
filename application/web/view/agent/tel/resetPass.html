@@ -1,0 +1,44 @@
+<div id="header" class="text-center">
+   <a class="back" href="javascript:history.back()">×</a>
+   我的
+</div>
+<div class="header-gao"></div>
+<div class="header" style="padding-bottom:1.11rem;">
+    <div class="top clearfix">
+        <div class="left">
+            <div class="header-img">
+                <img src="__ASSETS__/agent/img/tx.png" alt="">
+            </div>
+            <div class="header-p">
+                <p ng-bind="username"></p>
+                <p>{{userInfo.lev == '特级'?'合伙人':userInfo.lev+'推广员'}}</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="__ASSETS__/agent/img/erwm.png" ui-sref="sharePage">
+        </div>
+    </div>
+</div>
+
+<div class="my-row">
+    <ul>
+        <li>
+            <span><img src="__ASSETS__/agent/img/B_dl.png" alt=""></span><p class="op">旧密码：</p><input type="password"  ng-model="oldpassword" placeholder="请输入旧密码">
+        </li>
+        <li>
+            <span><img src="__ASSETS__/agent/img/repeatpassword.png" alt=""></span><p class="op">新密码：</p><input  type="password"  ng-model="newpassword" placeholder="请输入新密码">
+        </li>
+
+        <li>
+            <span><img src="__ASSETS__/agent/img/repeatpassword.png" alt=""></span><p class="op" >重复新密码：</p><input  type="password"  ng-model="repeatpassword" placeholder="请输入重复密码" style="width:65%;">
+        </li>
+    </ul>
+
+</div>
+<div class="text-center paddingtop15 color-fen">{{tip}}</div>
+
+<div class="personal-sub" ng-click="personalSub()">保存</div>
+
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>

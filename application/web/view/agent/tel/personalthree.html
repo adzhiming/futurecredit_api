@@ -1,0 +1,39 @@
+<div id="header" class="text-center">
+   <a class="back" ui-sref="subIndex">×</a>
+   我的
+</div>
+<div class="header-gao"></div>
+<div class="header" style="padding-bottom:1.11rem;">
+    <div class="top clearfix">
+        <div class="left">
+            <div class="header-img">
+                <img src="__ASSETS__/agent/img/tx.png" alt="">
+            </div>
+            <div class="header-p">
+                <p ng-bind="username"></p>
+                <p>{{userInfo.lev == '特级'?'合伙人':userInfo.lev+'推广员'}}</p>
+            </div>
+        </div>
+        <div class="right">
+            <img src="__ASSETS__/agent/img/erwm.png" ui-sref="sharePage">
+        </div>
+    </div>
+</div>
+
+<div class="personalthree-row">
+    <div class="row" ui-sref="personal">
+        <img src="__ASSETS__/agent/img/bankicon.png" />
+        个人资料
+    </div>
+    <div class="row" ui-sref="resetPass">
+        <img src="__ASSETS__/agent/img/xm.png" />
+        修改密码
+    </div>
+    <div class="row" ui-sref="sharePage">
+        <img src="__ASSETS__/agent/img/B_grzx_icon.png" />
+        我的分享链接
+    </div>
+</div>
+
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>

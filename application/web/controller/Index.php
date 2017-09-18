@@ -1,0 +1,10 @@
+<?php
+namespace app\web\controller;
+use think\Log;
+use think\Config;
+class Index extends Base {
+    public function index() {
+        //return 'hahahah';
+    	return $this->returnData(self::RET_CODE_OK,'',array('count' =>100));
+    }
+}

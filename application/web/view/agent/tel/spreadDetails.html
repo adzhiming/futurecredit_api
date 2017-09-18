@@ -1,0 +1,53 @@
+<div id="header" class="text-center">
+   <a class="back" ui-sref="spread({types:types})">×</a>
+   {{titleName}}
+</div>
+<!-- <div class="spread-details-box box-show" id="info-box">
+    <div class="header" style="background-image:url('__ASSETS__/agent/img/detailsbg.jpg')">
+        <img src="http://{{logo}}" class="logo"/>
+        <div class="er-box text-center">
+            <div id="erweima"></div>
+            <p>长按图中二维码了解详情</p>
+        </div>
+    </div>
+
+    <div class="info-box" ng-if="types == 'xy'">
+        <table ng-repeat="key in cardList" >
+            <tr>
+                <td class="label">提供商</td>
+                <td class="conton" ng-bind="key.card_name"></td>
+            </tr>
+            <tr>
+                <td class="label" >推广内容</td>
+                <td class="conton" ng-bind="key.card_details"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="info-box" ng-if="types == 'xd'">
+        <table  >
+            <tr>
+                <td class="label">提供商</td>
+                <td class="conton" ng-bind="card_name"></td>
+            </tr>
+            <tr>
+                <td class="label">额度</td>
+                <td class="conton" ng-bind="money_range"></td>
+            </tr>
+            <tr>
+                <td class="label" >推广内容</td>
+                <td class="conton" ng-bind="card_details"></td>
+            </tr>
+        </table>
+    </div>
+</div> -->
+<div id="info-box"></div>
+<div id="boxs"></div>
+
+
+<div id="imgbox"></div>
+<div class="spread-copy">长按二维码保存</div>
+<div class="footer-gao"></div>
+<ng-include src="'footer.html'" ></ng-include>
+<script type="text/javascript" src="__ASSETS__/agent/js/qrcode.min.js"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/html2canvas.js"></script>

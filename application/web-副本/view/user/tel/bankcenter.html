@@ -1,0 +1,52 @@
+
+<!--银行-->
+<div class="bankCenter">
+    <div class="bank-top">
+        <div class="img">
+            <img src="http://{{bank.bank_logo}}" alt="">
+        </div>
+        <div class="name">
+            <p ng-bind="bank.bank_name"></p>
+            <p ng-bind="bank.bank_detail">每月免费观影券</p>
+        </div>
+    </div>
+    <div class="bank-bottom">
+        <ul>
+            <li>批卡速度 <span>{{bank.card_speed}}</span></li>
+            <li>平均额度 <span>{{bank.average_amount}}</span></li>
+            <li>通过率 <span>{{bank.passing_rate}}</span></li>
+        </ul>
+    </div>
+</div>
+<!--信用卡-->
+
+<div class="bank-card" ng-repeat="card in bankcenter" ng-click="cardUrl(card.id)">
+
+    <div class="card-left">
+        <div class="top">
+            <p ng-bind="card.card_name"></p>
+        </div>
+        <div class="bottom">
+            <div class="left">
+                <p ng-bind="card.card_details"></p>
+            </div>
+            <div class="right">
+                <p>{{card.apply_number}}</p>
+                <p>申请人数</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="card-right">
+        <div class="left"><img ng-src="http://{{card.card_logo}}" alt=""></div>
+        <div class="right"><img src="__ASSETS__user/images/go.png" alt=""></div>
+    </div>
+
+</div>
+
+<!--弹出框-->
+<login></login>
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="indexapp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <link rel="shortcut icon" href="__ASSETS__/agent/img/favicon.ico" type="image/x-icon">
+        <title>聚合共享</title>
+    </head>
+<script type="text/javascript">
+    var deviceWidth = document.documentElement.clientWidth;
+    if (deviceWidth > 750) deviceWidth = 750;
+    document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+	var rout = "{$api_url}"+"agent/";
+    var routUser = "{$api_url}"+"user/";
+
+
+</script>
+<link rel="stylesheet" type="text/css" href="__ASSETS__/agent/css/loading-bar.min.css" />
+<link rel="stylesheet" type="text/css" href="__ASSETS__/agent/css/common.css?t={$tl}" />
+<link rel="stylesheet" type="text/css" href="__ASSETS__/agent/css/other.css?t={$tl}" />
+</head>
+<body class="bg-body">
+
+<div ui-view></div>
+
+
+
+<script type="text/javascript" src="__ASSETS__/agent/js/jquery.js?t={$tl}"></script>
+<!-- <script type="text/javascript" src="__ASSETS__/agent/js/fastclick.js"></script> -->
+<script type="text/javascript" src="__ASSETS__/agent/js/datePicker.js?t={$tl}"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/angular.min.js?t={$tl}"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/angular-ui-router.min.js?t={$tl}"></script>
+<script src="__ASSETS__/agent/js/loading-bar.min.js"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/store.legacy.min.js?t={$tl}"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/common.js?t={$tx}"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/qrcode.min.js"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/html2canvas.js"></script>
+
+</body>
+</html>

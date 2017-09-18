@@ -1,0 +1,229 @@
+
+
+<style>
+    body{
+        background-color: #fff;
+    }
+    .all{
+        background-color: #fff;
+        height:93%;
+    }
+    .all span{
+        margin-top:0.05rem;
+        font-size:0.28rem;
+
+    }
+    .all .header{
+        border: none;
+        width:100%;
+        background-color: #4f7dfd;
+        height:0.8rem;
+        font-size:0.3rem;
+        line-height:0.8rem;
+        color: #ffffff;
+        text-align: center;
+        padding-top:1px;
+    }
+    .all .header .ox{
+        width:20%;
+        line-height:0.4rem;
+        border-right: 1px solid #ffffff;
+        font-size:0.5rem;
+        margin-top:0.2rem;
+        height:0.4rem;
+        float: left;
+    }
+    .all .header .zx{
+        width:70%;
+        float: left;
+    }
+    /*.all .login{*/
+    /*margin-top:0.5rem;*/
+    /*padding:0 0.8rem;*/
+
+    /*}*/
+    /*.all .login ul li{*/
+    /*width:50%;*/
+    /*float: left;*/
+    /*text-align: center;*/
+    /*}*/
+    /*.all .login ul li:nth-of-type(1){*/
+    /*color: #4f7dfd;*/
+    /*border-bottom: 1px solid #4f7dfd;*/
+    /*padding-bottom:0.3rem;*/
+    /*}*/
+    .all input{
+        border: 1px solid #cccccc;
+        outline:none;
+        border-radius: 0.1rem;
+        padding-left:0.2rem;
+    }
+    .all .send{
+        /*margin-top:1rem;*/
+        padding:0.5rem 0.8rem;
+    }
+    .all .sjhm{
+        margin-top:1rem;
+    }
+    .all .sjhm span{
+        width:25%;
+        float: left;
+    }
+    .all .sjhm div{
+        width:75%;
+        float: left;
+    }
+    .all .sjhm input{
+        width:100%;
+        outline:none;
+        height:0.5rem;
+        font-size:0.26rem;
+    }
+
+    .all input{
+        font-size:0.26rem;
+    }
+    .all .yzm1{
+        margin-top:1.8rem;
+    }
+    .all .yzm1 input{
+        width:100%;
+        outline:none;
+        height:0.5rem;
+        font-size:0.26rem;
+    }
+    .all .yzm1 span{
+        width:25%;
+        float: left;
+        font-size:0.28rem;
+    }
+
+    .all .yzm1 div{
+        width:75%;
+        float: left;
+
+    }
+    .all .yzm1 #yzmcode{
+        text-align: left;
+        width:45%;
+        outline:none;
+        height:0.5rem;
+        float: right;
+        background-color: #4f7dfd;
+        border: none;
+        color: #FFFFFF;
+    }
+    .all .yzm1 #yzm{
+        width:45%;
+        outline:none;
+        height:0.5rem;
+        float: left;
+    }
+
+    /*真实姓名*/
+    .all .zsxm span{
+        width:25%;
+        float: left;
+    }
+    .all .zsxm div{
+        width:75%;
+        float: left;
+    }
+    .all .zsxm input{
+        width:100%;
+        outline:none;
+        height:0.5rem;
+        font-size:0.26rem;
+    }
+    .all .zsxm .mp{
+        margin-top:0.05rem;
+        font-size:0.14rem;
+    }
+    /*登录*/
+    .all .dl{
+        width:75%;
+        margin:1rem auto;
+        background-color: #4f7dfd;
+        height:0.5rem;
+        line-height:0.5rem;
+        color: #FFFFFF;
+        text-align: center;
+        border-radius: 0.1rem;
+
+    }
+    .all .zc{
+        text-align: center;
+        margin-top:2rem;
+        color: #4f7dfd;
+    }
+    #yzm{
+        font-size:0.26rem;
+    }
+    input[type=button], input[type=submit], input[type=file], button {
+        cursor: pointer; -webkit-appearance: none;
+    }
+    input {
+        -webkit-appearance: none;
+    }
+    textarea{
+        -webkit-appearance: none;
+    }
+    .all .yzm1 .mpp{
+        font-size:0.16rem;
+        float: left;
+        margin-top:0.2rem;
+    }
+</style>
+
+<div class="all">
+    <div class="header">
+        <div class="ox">&times;</div>
+        <div class="zx">
+            <p>登录</p>
+        </div>
+    </div>
+    <!--<div class="login">-->
+    <!--<ul>-->
+    <!--<li>验证码登录</li>-->
+    <!--<li>密码登录</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <div class="send">
+        <div class="zsxm">
+            <span>真实姓名</span>
+            <div>
+                <input type="text" name="username" placeholder="" id="name">
+                <p class="mp">请务必填写真实姓名</p>
+            </div>
+        </div>
+        <div class="sjhm">
+            <span>手机号码</span>
+            <div>
+                <input type="number"  name="name" placeholder=""  id="telphone">
+            </div>
+
+        </div>
+        <div class="yzm1">
+            <span>验证码</span>
+            <div>
+                <input type="number" name="yzm" placeholder=""   id="yzm">
+                <input type="button" name="iphone" value="获取验证码" ng-click="sendCode('all')" id="yzmcode" >
+                <p class="mpp" id="code"></p>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="dl" ng-click="sq()">登录</div>
+    <!--<a href="" ui-sref="signIn">-->
+    <!--<div class="zc">注册账号</div>-->
+    <!--</a>-->
+</div>
+<script>
+    $('.ox').on("click",function () {
+        window.location.href="index#!/card/free";
+    })
+
+</script>
+
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="indexapp">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0"/>
+        <title>未莱信贷</title>
+    </head>
+<script type="text/javascript">
+    var deviceWidth = document.documentElement.clientWidth;
+    if (deviceWidth > 750) deviceWidth = 750;
+    document.documentElement.style.fontSize = deviceWidth / 7.5 + 'px';
+</script>
+<link rel="stylesheet" type="text/css" href="__ASSETS__/agent/css/common.css" />
+<link rel="stylesheet" type="text/css" href="__ASSETS__/agent/css/other.css" />
+
+<body>
+<div id="header" class="text-center">
+   <!-- <a class="back">×</a> -->
+   代理登陆
+</div>
+<div class="header-gao"></div>
+<div>
+    <img src="__ASSETS__/agent/img/dluy.png" class="img-responsive" />
+</div>
+
+
+<div class="login-box">
+    <form action="" name="form1" id="mesg">
+        <div>
+            <input type="text" name="username" placeholder="请输入账号" class="ipt1">
+            <input type="password" name="password" placeholder="请输入密码" class="ipt2">
+            <input type="button"  value="登录" onclick="login()">
+        </div>
+    </form>
+    <a class="op" style="display:block;" href="apply">如何申请代理？</a>
+
+</div>
+<script type="text/javascript" src="__ASSETS__/agent/js/jquery.js"></script>
+<script type="text/javascript" src="__ASSETS__/agent/js/store.legacy.min.js"></script>
+<script type="text/javascript">
+     function login(){
+         var name = $('input[name="username"]').val();
+         var pass = $('input[name="password"]').val();  
+         var api_url = "{$api_url}";
+         $.ajax({
+        	 type: 'POST',
+             url: api_url+"agent/login",
+             data:{
+            	 phone:name,
+            	 password:pass,
+             },
+             headers: {
+                 "Access-Control-Allow-Origin":"http://example.edu",
+                 "Access-Control-Allow-Headers":"X-Requested-With"
+             },
+             success: function(res) {
+            	 if(res.code == 1){
+                     zdyAlert.init(res.msg,function(){
+                         store.set('userInfo',res.data);
+                         window.location.href="index";
+                     })
+
+                 }else{
+                     zdyAlert.init(res.msg,function(){
+
+                     })
+                 }
+             }
+         })
+     }
+     
+
+
+    var zdyAlert = {
+        init:function(e,callback){
+            var html = '<div class="alertcen"></div>';
+            html += '<div class="alertnei"><p class="title">提示</p><div class="alert-con">'+ e +'</div><div class="alert-btn">确定</div></div>';
+            $('body').append(html);
+            $('.alert-btn').click(function(){
+                $('.alertcen,.alertnei').remove();
+                callback();
+            })
+        }
+    }
+
+    
+</script>
+</body>
+</html>
+
